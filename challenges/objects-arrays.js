@@ -87,7 +87,7 @@ const contactInfo = graduates.map((obj)=> `${obj.first_name} ${obj.email}`);
 console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
-const unisWithUni=graduates.includes(graduates[9].university==='Univers');
+const unisWithUni=graduates.filter((obj)=> obj.university.includes('Uni'));
 console.log(unisWithUni);
 
 
@@ -114,6 +114,7 @@ The zoos want to display both the scientific name and the animal name in front o
 
 */
 const displayNames = [];
+zooAnimals.forEach((obj)=> displayNames.push(`Name: ${obj.animal_name},Scientific Name: ${obj.scientific_name}`));
 console.log(displayNames);
 
 /* Request 2: .map()
@@ -122,7 +123,7 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-const lowCaseAnimalNames = [];
+const lowCaseAnimalNames = zooAnimals.map((obj)=> obj.animal_name.toLowerCase());
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
@@ -138,7 +139,8 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-const populationTotal = 0;
+const populationTotal = zooAnimals.reduce((accu,value)=> accu + value.population,0);
+
 console.log(populationTotal);
 
 
