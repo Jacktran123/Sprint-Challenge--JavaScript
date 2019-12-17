@@ -35,7 +35,11 @@ Edit this document to include your answers after each question. Make sure to lea
 3. What is closure?
  A closure is a function having access to the parent scope, even after the parent function has closed.
 4. Describe the four rules of the 'this' keyword.  
-  
+  Global binding. This in global binding will refer to the window
+  Nww binding. This will refer to the newly created object
+  Implicit binding. This in implicit binding will refer to the object that it is inside of 
+  Explicit binding. In explicit binding, this will be use on the call and apply method to refer to the newly created object
+
 5. Why do we need super() in an extended class?
   Super will have the subclass to inherit every prototype from the class 
 ## Project Set up
